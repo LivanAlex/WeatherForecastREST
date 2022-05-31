@@ -37,15 +37,16 @@ public class MainService {
         double temperature = Double.parseDouble(weather.getTemp());
         String message = temperature <= 15.0 ? LOW : HIGH;
 
-        Sms sms = new Sms(number, message);
-
-//        smsService.sendSms(sms);
+        Message smsMessage = new Message();
+        smsMessage.setNumber(phoneNumber.getNumber());
+        smsMessage.setText(message);
+        smsService.sendSms(smsMessage);
 
         DataObject dataObject = new DataObject();
         dataObject.setNumber(phoneNumber.getNumber());
         dataObject.setMessage(message);
         dataObject.setCity(city.getRegion());
-        dataObject.setWeather(weather.getTemp());
+        dataObject.setTemperature(weather.getTemp());
         return dataObject;
     }
 

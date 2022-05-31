@@ -1,4 +1,7 @@
 package com.weather.spring.rest.entity;
+
+
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -6,9 +9,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class DataObject {
+public class Message {
+    private Long id;
+    private String text;
     private String number;
-    private String city;
-    private String temperature;
-    private String message;
+    private String sendTime;
+    private Boolean status;
 }

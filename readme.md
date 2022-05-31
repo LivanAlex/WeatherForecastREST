@@ -25,7 +25,7 @@ in good case, you will receive json:
 {
   "number": "+79681635788",
   "city": "Москва",
-  "weather": "9.85",
+  "temperature": "9.85",
   "message": "low temperature"
 }
 ```
