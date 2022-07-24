@@ -3,7 +3,7 @@ package com.weather.spring.rest.services;
 import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
-import com.weather.spring.rest.entity.PhoneNumber;
+import com.weather.spring.rest.dto.PhoneNumberDto;
 import com.weather.spring.rest.exeption_handling.PhoneValidationException;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class NumberValidationService {
 
 
 
-    public PhoneNumber validateNumber(String number){
+    public PhoneNumberDto validateNumber(String number){
         number = number.replace(' ', '+');
         boolean isValid = false;
         try {
@@ -28,6 +28,6 @@ public class NumberValidationService {
         if(!isValid){
             throw new PhoneValidationException(ERROR_MESSAGE);
         }
-        return new PhoneNumber(number);
+        return new PhoneNumberDto(number);
     }
 }

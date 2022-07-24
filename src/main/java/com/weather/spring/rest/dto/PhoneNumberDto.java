@@ -1,14 +1,14 @@
-package com.weather.spring.rest.entity;
+package com.weather.spring.rest.dto;
 
 import lombok.*;
 
 @NoArgsConstructor
 @Getter
 @Setter
-public class PhoneNumber {
+public class PhoneNumberDto {
     private String number;
 
-    public PhoneNumber(String number) {
+    public PhoneNumberDto(String number) {
         this.number = number;
     }
 }

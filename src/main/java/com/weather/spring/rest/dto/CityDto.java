@@ -1,4 +1,4 @@
-package com.weather.spring.rest.entity;
+package com.weather.spring.rest.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class City {
+public class CityDto {
     private String region;
 }

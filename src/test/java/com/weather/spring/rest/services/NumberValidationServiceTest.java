@@ -1,7 +1,7 @@
 package com.weather.spring.rest.services;
 
 import com.weather.spring.rest.configuration.Config;
-import com.weather.spring.rest.entity.PhoneNumber;
+import com.weather.spring.rest.dto.PhoneNumberDto;
 import com.weather.spring.rest.exeption_handling.PhoneValidationException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,7 +30,7 @@ class NumberValidationServiceTest {
         // given
         String numberWithSpase = " 79681635788";
         // when
-        PhoneNumber phoneNumber = numberValidationService.validateNumber(numberWithSpase);
+        PhoneNumberDto phoneNumber = numberValidationService.validateNumber(numberWithSpase);
         // then
         assertEquals("+79681635788", phoneNumber.getNumber());
     }
@@ -40,7 +40,7 @@ class NumberValidationServiceTest {
         // given
         String validNumber = "+79681635788";
         // when
-        PhoneNumber phoneNumber = numberValidationService.validateNumber(validNumber);
+        PhoneNumberDto phoneNumber = numberValidationService.validateNumber(validNumber);
         // then
         assertEquals("+79681635788", phoneNumber.getNumber());
     }

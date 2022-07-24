@@ -1,7 +1,7 @@
 package com.weather.spring.rest.services;
 
-import com.weather.spring.rest.entity.City;
-import com.weather.spring.rest.entity.Weather;
+import com.weather.spring.rest.dto.CityDto;
+import com.weather.spring.rest.dto.WeatherDto;
 import com.weather.spring.rest.exeption_handling.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,8 +25,8 @@ public class WeatherService {
         this.restTemplate = restTemplate;
     }
 
-    public Weather getWeather(City city) {
-        Weather weather = restTemplate.postForObject(restWeatherURL, city, Weather.class);
+    public WeatherDto getWeather(CityDto city) {
+        WeatherDto weather = restTemplate.postForObject(restWeatherURL, city, WeatherDto.class);
         if (weather == null) {
             throw new ServiceException("Our service can't find weather by city: " + city.getRegion());
         }

@@ -1,6 +1,6 @@
 package com.weather.spring.rest.controllers;
 
-import com.weather.spring.rest.entity.DataObject;
+import com.weather.spring.rest.dto.DataObject;
 import com.weather.spring.rest.services.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

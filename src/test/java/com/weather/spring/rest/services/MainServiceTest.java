@@ -1,6 +1,6 @@
 package com.weather.spring.rest.services;
 
-import com.weather.spring.rest.entity.PhoneNumber;
+import com.weather.spring.rest.dto.PhoneNumberDto;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -37,7 +37,7 @@ class MainServiceTest {
         verify(numberValidationService).validateNumber(stringArgumentCaptor.capture());
         String capturedString = stringArgumentCaptor.getValue();
         assertEquals(number, capturedString);
-        PhoneNumber phoneNumber = new PhoneNumber("+79681635788");
+        PhoneNumberDto phoneNumber = new PhoneNumberDto("+79681635788");
         Mockito.when(numberValidationService.validateNumber(number)).thenReturn(phoneNumber);
     }
 

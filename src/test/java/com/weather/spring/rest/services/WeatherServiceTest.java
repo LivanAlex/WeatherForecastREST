@@ -1,8 +1,8 @@
 package com.weather.spring.rest.services;
 
 import com.weather.spring.rest.configuration.Config;
-import com.weather.spring.rest.entity.City;
-import com.weather.spring.rest.entity.Weather;
+import com.weather.spring.rest.dto.CityDto;
+import com.weather.spring.rest.dto.WeatherDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +29,8 @@ class WeatherServiceTest {
 
     @Test
     void getWeather() {
-        City city = new City("Минск");
-        Weather weather = weatherService.getWeather(city);
+        CityDto city = new CityDto("Минск");
+        WeatherDto weather = weatherService.getWeather(city);
         assertNotNull(weather);
     }
 }

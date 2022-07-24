@@ -1,6 +1,6 @@
 package com.weather.spring.rest.services;
 
-import com.weather.spring.rest.entity.Message;
+import com.weather.spring.rest.dto.MessageDto;
 import com.weather.spring.rest.exeption_handling.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,7 +22,7 @@ public class SmsService {
         this.restTemplate = restTemplate;
     }
 
-    public boolean sendSms(Message message){
+    public boolean sendSms(MessageDto message){
         Boolean isSend = restTemplate.postForObject(restSmsURL, message, Boolean.class);
         if(isSend == null || Boolean.FALSE.equals(isSend)){
             throw new ServiceException("Our service can't send message to this phone number: " + message.getNumber());

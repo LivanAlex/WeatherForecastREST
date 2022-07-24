@@ -1,7 +1,7 @@
 package com.weather.spring.rest.services;
 
-import com.weather.spring.rest.entity.*;
-import com.weather.spring.rest.entity.PhoneNumber;
+import com.weather.spring.rest.dto.*;
+import com.weather.spring.rest.dto.PhoneNumberDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,16 +28,16 @@ public class MainService {
 
     public DataObject doJob(String number) {
 
-        PhoneNumber phoneNumber = numberValidationService.validateNumber(number);
+        PhoneNumberDto phoneNumber = numberValidationService.validateNumber(number);
 
-        City city = cityService.getCity(phoneNumber);
+        CityDto city = cityService.getCity(phoneNumber);
 
-        Weather weather = weatherService.getWeather(city);
+        WeatherDto weather = weatherService.getWeather(city);
 
         double temperature = Double.parseDouble(weather.getTemp());
         String message = temperature <= 15.0 ? LOW : HIGH;
 
-        Message smsMessage = new Message();
+        MessageDto smsMessage = new MessageDto();
         smsMessage.setNumber(phoneNumber.getNumber());
         smsMessage.setText(message);
         smsService.sendSms(smsMessage);

@@ -1,4 +1,4 @@
-package com.weather.spring.rest.entity;
+package com.weather.spring.rest.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -6,6 +6,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Weather {
+public class WeatherDto {
     private String temp;
 }

@@ -1,4 +1,4 @@
-package com.weather.spring.rest.entity;
+package com.weather.spring.rest.dto;
 
 
 
@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Message {
+public class MessageDto {
     private Long id;
     private String text;
     private String number;
